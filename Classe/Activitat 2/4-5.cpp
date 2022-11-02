@@ -16,12 +16,27 @@ int main()
         scanf("%i",&a_socFelic);
         socFelic = a_socFelic;
 
+        /*
+        Volem fer una porta AND
+        Taula de la veritat per una porta AND:
+        0+0=0
+        0+1=0
+        1+0=0
+        1+1=1
+
+        if vol dir "si" (condicional) en angles, exemple: si fa sol, anire a la platja
+        else vol dir "d'altra banda". Si no hem entrat al loop if, entrarem al loop else
+        */
+
+        //en aquest cas usem el loop if per:
+        //si bonTemps i socFelic son true (1), entrem al loop if
         if (bonTemps && socFelic)
         {
             //assignem el valor a una variable en cas de voler usar-la
             esPerfecte = 1;
             printf("El dia és perfecte :D\n");
         }
+        //si alguna de les dues o les dues son false (0), no entrem a if i entrem al loop else
         else
         {
             esPerfecte = 0;
