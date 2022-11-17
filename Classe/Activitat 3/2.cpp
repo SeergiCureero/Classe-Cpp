@@ -1,40 +1,28 @@
 #include <iostream>
+using namespace std;
+int main(){
+    int n, m, mult;
+    char resposta;
+    bool continua = true;
 
-int MultiplicaNumsEntre(int n, int m){
-    //si n és major o igual a m ens sortim de la funció doncs hem assumit que n<m
-    if (n>=m)   
-    {
-        return 0;
-    }
-    // resultat (res) ha de ser = 1 perque si no estaria multiplicant per 0 o per un valor desconegut
-    int res = 1, i = n;
-    char* resposta = "s";
-    while (resposta == "s" || resposta == "S")     
-    {
-        if (i<=m)
+    while(continua){
+        printf("n: ");
+        scanf("%i", &n);
+        printf("m: ");
+        scanf("%i", &m);
+        mult = 1;
+        for (int i = n; i <= m; i++)
         {
-            res*=i;
-            i++;
+            mult*=i;
         }
-        else
-        {
-            return res;
-        }
+        printf("El resultat de la multiplicació dels numeros entre %i i %i (ambdos inclosos) és %i\n", n, m, mult);
         printf("Vols seguir calculant? ");
         scanf("%s", &resposta);
-    }
-    return res;
-    
-}
-
-int main()
-{
-    int n, m;
-    printf("n: ");
-    scanf("%i",&n);
-    printf("m: ");
-    scanf("%i",&m);
-
-    printf("%i\n", MultiplicaNumsEntre(n,m));
-    return 0;
-}
+        if (resposta !='s' && resposta != 'S')
+        {
+            //si resposta és diferent a s i S, no continua
+            continua = false;
+        }
+    } 
+    return 0;   
+} 
