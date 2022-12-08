@@ -1,23 +1,26 @@
 #include <cmath>
 #include <stdio.h>
  
-double Area(double r){
+float Area(float r){
     return M_PI*r*r;
 }
-double Perimetre(double r){
+
+float Perimetre(float r){
     return 2*M_PI*r;
 }
-double Volum(double r){
+
+float Volum(float r){
     return (4*M_PI*r*r*r)/3;
 }
+
 int main()
 {  
-    double radi;
+    float radi;
     printf("Radi (cm): ");
-    scanf("%lf", &radi);
+    scanf("%f", &radi);
  
-    printf("Perimetre: %lf cm\n", Perimetre(radi));
-    printf("Area: %lf cm²\n", Area(radi));
-    printf("Volum: %lf cm³\n", Volum(radi));
+    printf("Perimetre: %.12f cm\n", Perimetre(radi));
+    printf("Area: %.12f cm²\n", Area(radi));
+    printf("Volum: %.12f cm³\n", Volum(radi));
     return 0;
 }
